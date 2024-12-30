@@ -21,3 +21,34 @@ and the subsections of this documentation also go in-depth about it.
 Please read the [contributing](./contributing) document.
 This document goes over the basics of how to contribute
 and the suggested guidelines to follow.
+
+## I can't get the database to connect with Kanae!
+
+This is most likely due to an incorrect URI connection string being provided.
+A different quirk with the PostgreSQL docker images is that the `user` by default, which that user is the root `postgres` user.
+In short, this means that you would need to adjust your connection URI to the one below. Make sure to change out the password for a password of your own.
+
+```bash
+postgresql://postgres:password@localhost:5432/kanae
+```
+
+:::warning
+
+You need to make sure that the password that is set in the environment variable `DB_PASSWORD` (found inside `docker/.env`) is the exact same one specified
+within your connection URI string.
+
+For example:
+
+The environment variable (within `docker/.env`):
+
+```bash
+DB_PASSWORD=mysecretpassword
+```
+
+Within `server/config.yml`
+
+```yaml
+postgres_uri: "postgresql://postgres:mysecretpassword@localhost:5432/kanae"
+```
+
+:::
