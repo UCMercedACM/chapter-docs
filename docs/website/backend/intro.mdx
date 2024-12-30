@@ -103,7 +103,7 @@ Unlike what FastAPI tells you, Kanae by default includes a launcher of its own. 
 so development goes easier. The follow command executes this.
 
 ```bash
-python3 server/launcher.py --no-workers
+uvicorn launcher:app --app-dir=server --reload-exclude=venv --reload
 ```
 
 Alternatively, ``task start`` can be used as a shortcut if you have Task installed.
@@ -128,7 +128,7 @@ cp docker/example.env docker/.env
 All you need to do is to run the following command.
 
 ```bash
-docker compose docker/docker-compose.dev.yml up -d
+docker compose -f docker/docker-compose.dev.yml up -d
 ```
 
 ## Details
