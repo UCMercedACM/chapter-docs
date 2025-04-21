@@ -24,6 +24,7 @@ There are some tools that you would need to have installed before you continue. 
 - [Python 3.9+](https://www.python.org/)
 - [Docker](https://www.docker.com/)
 - [Task](https://taskfile.dev/)
+- [Atlas](https://atlasgo.io/)
 
 :::important
 
@@ -90,11 +91,11 @@ cp config-example.yml server/config.yml
 
 ### Step 6 - Run the SQL migrations
 
-Kanae actually includes an custom SQL migrations system that has been battle-tested, so that's what we need to set up.
-If this step doesn't work, just skip it for now.
+Kanae uses [Atlas](https://atlasgo.io/) to manage schema migrations. Specifically, [Declarative Migrations](https://atlasgo.io/getting-started#declarative-migrations)
+are used instead. This type of migration is very similar to how Git works. To simplify things, use the task command below instead. Continue to finish the prompts.
 
 ```bash
-python3 server/migrations.py init
+task schema-apply
 ```
 
 ### Step 7 - Running the development server
