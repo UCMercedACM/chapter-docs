@@ -1,12 +1,11 @@
-import clsx from "clsx"; // clsx helps manage conditional className names in a clean and concise manner.
+import clsx from "clsx";
 import { type CSSProperties, type ReactNode, useState } from "react";
 
-// Define an interface for the component props
 interface CardProps {
-  className?: string; // Custom classes for the container card
-  style?: CSSProperties; // Custom styles for the container card
-  children: ReactNode; // Content to be included within the card
-  shadow?: "lw" | "md" | "tl"; // Used to add shadow under your card Shadow levels: low (lw), medium (md), top-level (tl)
+  className?: string;
+  style?: CSSProperties;
+  children: ReactNode;
+  shadow?: "lw" | "md" | "tl";
 }
 
 export default function Card({
@@ -33,14 +32,15 @@ export default function Card({
   };
 
   const cardPressedStyle = {
-    transform: "scale(0.96)", // Shrink even more for a tactile feel
+    transform: "scale(0.96)",
     transition: "transform 0.1s ease-in-out",
   };
 
   const cardShadow = shadow ? `item shadow--${shadow}` : "";
 
   return (
-    <div
+    <button
+      type="button"
       className={clsx("card", className, cardShadow)}
       style={{
         ...style,
@@ -57,8 +57,9 @@ export default function Card({
       onMouseUp={() => {
         setIsPressed(false);
       }}
+      tabIndex={0}
     >
       {children}
-    </div>
+    </button>
   );
-} // Build the card component with the specified props
+}

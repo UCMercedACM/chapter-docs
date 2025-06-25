@@ -52,7 +52,7 @@ export default function CardHeader({
       )}
       style={style}
     >
-      {children}
+      <h3>{children}</h3>
     </div>
   );
 }
