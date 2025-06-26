@@ -31,10 +31,10 @@ function Feature({ title, description, link }: CardItem) {
   return (
     <div className={clsx("col col--4")}>
       <div className="text--center padding-horiz--md">
-        <Link to={link} style={{ color: "#FFF", textDecoration: "none" }}>
+        <Link to={link} style={{textDecoration: "none" }} className="">
           <Card shadow="tl">
-            <CardHeader>{title}</CardHeader>
-            <CardBody>{description}</CardBody>
+            <CardHeader variant="secondary">{title}</CardHeader>
+            <CardBody variant="secondary">{description}</CardBody>
           </Card>
         </Link>
       </div>
