@@ -42,7 +42,7 @@ function Feature({ title, description, link }: CardItem) {
   );
 }
 
-export default function HomepageFeatures(): ReactNode {
+export default function CardFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className="container">

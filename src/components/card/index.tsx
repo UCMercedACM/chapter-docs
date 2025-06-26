@@ -39,8 +39,8 @@ export default function Card({
   const cardShadow = shadow ? `item shadow--${shadow}` : "";
 
   return (
-    <button
-      type="button"
+    // biome-ignore lint/a11y/noStaticElementInteractions: It's not a button, but an card
+<div
       className={clsx("card", className, cardShadow)}
       style={{
         ...style,
@@ -57,9 +57,8 @@ export default function Card({
       onMouseUp={() => {
         setIsPressed(false);
       }}
-      tabIndex={0}
     >
       {children}
-    </button>
+    </div>
   );
 }
