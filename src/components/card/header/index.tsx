@@ -13,6 +13,7 @@ interface CardHeaderProps {
   breakWord?: boolean;
   truncate?: boolean;
   weight?: string;
+  icon?: ReactNode
 }
 
 export default function CardHeader({
@@ -27,6 +28,7 @@ export default function CardHeader({
   breakWord = false,
   truncate = false,
   weight,
+  icon,
 }: CardHeaderProps) {
   const text = textAlign ? `text--${textAlign}` : "";
   const textColor = variant ? `text--${variant}` : "";
@@ -52,7 +54,15 @@ export default function CardHeader({
       )}
       style={style}
     >
-      <h3>{children}</h3>
+      <div className="row">
+    <div className="col col--1">
+      {icon}
+    </div>
+    <div className="col">
+    <h3>{children}</h3>
+    </div>
+      </div>
+
     </div>
   );
 }
