@@ -14,9 +14,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  /* background-image: url("/img/hero.png"); */
 }
-
 
 @media screen and (max-width: 996px) {
   .heroBanner {

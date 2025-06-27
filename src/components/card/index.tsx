@@ -40,7 +40,7 @@ export default function Card({
 
   return (
     // biome-ignore lint/a11y/noStaticElementInteractions: It's not a button, but an card
-<div
+    <div
       className={clsx("card", className, cardShadow)}
       style={{
         ...style,
