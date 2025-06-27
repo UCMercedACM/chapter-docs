@@ -20,26 +20,26 @@ const CardList: CardItem[] = [
   {
     icon: (
       <Icon
-        icon="material-symbols:3g-mobiledata-rounded"
+        icon="lucide:info"
         width="28"
         height="28"
       />
     ),
-    title: "Test",
-    description: "testing again",
-    link: "/about",
+    title: "Documentation Introduction",
+    description: "Covers the basics of this documentation, including the structure of this documentation",
+    link: "/introduction",
   },
   {
     icon: (
       <Icon
-        icon="material-symbols:3g-mobiledata-rounded"
+        icon="lucide:square-code"
         width="28"
         height="28"
       />
     ),
-    title: "Test",
-    description: "testing again",
-    link: "/about",
+    title: "Project Documentation",
+    description: "Technical documentation for all projects, including past projects",
+    link: "/projects",
   },
 ];
 
