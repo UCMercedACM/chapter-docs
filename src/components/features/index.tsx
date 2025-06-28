@@ -27,7 +27,7 @@ const CardList: CardItem[] = [
     ),
     title: "Documentation Introduction",
     description: "Covers the basics of this documentation, including the structure of this documentation",
-    link: "/introduction",
+    link: "/docs/introduction",
   },
   {
     icon: (
@@ -39,7 +39,7 @@ const CardList: CardItem[] = [
     ),
     title: "Project Documentation",
     description: "Technical documentation for all projects, including past projects",
-    link: "/projects",
+    link: "/docs/projects",
   },
 ];
 
