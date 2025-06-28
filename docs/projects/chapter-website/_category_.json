@@ -1,0 +1,13 @@
+{
+  "position": 2,
+  "label": "Chapter-Website",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Chapter-Website Overview"
+  },
+  "customProps": {
+    "description": "Overview of the Chapter Website"
+  }
+}
