@@ -1,41 +1,39 @@
-# Website
+# Chapter Docs
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Central hub for ACM @ UC Merced's documentation. Content in this repository is published to [docs.ucmacm.dev](https://docs.ucmacm.dev) for viewing.
 
-## Installation
+## Getting Started
 
-```bash
-yarn
-```
+### Setup
 
-## Local Development
+### Requirements
 
-```bash
-yarn start
-```
+- [Bun](https://bun.sh)
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+### Step 1 - Clone the Repository
 
-## Build
+If you are within the organization, clone the repository directly. For those who are interested in contributing that are not a part of the organization, fork it first please!
 
 ```bash
-yarn build
+git clone https://github.com/UCMercedACM/chapter-docs
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+### Step 2 - Install Dependencies
 
-## Deployment
-
-Using SSH:
+Bun is the runtime and package manager we are using.
 
 ```bash
-USE_SSH=true yarn deploy
+bun install
 ```
 
-Not using SSH:
+### Step 3 - Run the Development Server
 
 ```bash
-GIT_USER=<Your GitHub username> yarn deploy
+bun run start
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## License
+
+The Chapter Docs (all content found under `./docs`) is licensed under [CC-BY-SA 4.0](./LICENSE-docs).
+
+Any logos or assets that are produced and in relation of ACM @ UC Merced is All Rights Reserved and does not inherit any license from organizational projects.
