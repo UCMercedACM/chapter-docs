@@ -18,27 +18,17 @@ interface CardItem {
 
 const CardList: CardItem[] = [
   {
-    icon: (
-      <Icon
-        icon="lucide:info"
-        width="28"
-        height="28"
-      />
-    ),
+    icon: <Icon icon="lucide:info" width="28" height="28" />,
     title: "Documentation Introduction",
-    description: "Covers the basics of this documentation, including the structure of this documentation",
+    description:
+      "Covers the basics of this documentation, including the structure of this documentation",
     link: "/docs/introduction",
   },
   {
-    icon: (
-      <Icon
-        icon="lucide:square-code"
-        width="28"
-        height="28"
-      />
-    ),
+    icon: <Icon icon="lucide:square-code" width="28" height="28" />,
     title: "Project Documentation",
-    description: "Technical documentation for all projects, including past projects",
+    description:
+      "Technical documentation for all projects, including past projects",
     link: "/docs/projects",
   },
 ];

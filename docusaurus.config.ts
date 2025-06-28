@@ -44,25 +44,24 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/UCMercedACM/chapter-docs/tree/main/docs",
+          editUrl: "https://github.com/UCMercedACM/chapter-docs/tree/main/docs",
         },
         blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
-    ]
+    ],
   ],
   themes: [
-        [
+    [
       "@easyops-cn/docusaurus-search-local",
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       ({
         // ... Your options.
         // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
-        searchBarPosition: "left"
+        searchBarPosition: "left",
       }),
     ],
   ],
@@ -70,7 +69,7 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     colorMode: {
-      respectPrefersColorScheme: true
+      respectPrefersColorScheme: true,
     },
     image: "img/docusaurus-social-card.jpg",
     navbar: {
@@ -84,19 +83,19 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "introSidebar",
           position: "left",
-          label: "Introduction"
+          label: "Introduction",
         },
         {
           type: "docSidebar",
           sidebarId: "projectSidebar",
           position: "left",
-          label: "Projects"
+          label: "Projects",
         },
         {
           href: "https://github.com/UCMercedACM",
           position: "right",
-          className: 'header-github-link',
-          'aria-label': 'GitHub repository',
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
         },
       ],
     },
@@ -107,7 +106,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-    }
+    },
   } satisfies Preset.ThemeConfig,
 };
 
