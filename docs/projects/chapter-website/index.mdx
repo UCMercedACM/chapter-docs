@@ -1,0 +1,82 @@
+---
+sidebar_position: 1
+sidebar_label: Introduction
+description: Covers the basics of the Chapter-Website
+---
+
+# Introduction
+
+In a website, the frontend refers to what the user interactive with and sees. Our case is no different then that definition. [React](https://react.dev) and [shadcn/ui](https://ui.shadcn.com/) is what the frontend primarily uses.
+
+## Prerequisites
+
+There are some tools that you would need to have installed before you continue. They are listed below:
+
+- [Git](https://git-scm.com/)
+- [Node.js 22+](https://nodejs.org/en)
+
+:::important
+
+It's also important to read the [contributing](https://github.com/UCMercedACM/Chapter-Website/blob/react-rewrite/.github/CONTRIBUTING.md) guidelines, as they are recommendations on how you should contribute.
+
+:::
+
+## Setup
+
+:::tip
+
+[Volta](https://volta.sh/) is recommended to be used for this project as it makes installing Node.js and configuring it much easier.
+
+:::
+
+### Step 1 - Clone the repo
+
+We first need to clone the repo so we can start programming. This can be done shown below.
+
+```bash
+git clone https://github.com/UCMercedACM/Chapter-Website \
+&& cd Chapter-Website/react
+```
+
+### Step 2 - Install all dependencies
+
+```bash
+npm install
+```
+
+:::note
+
+[Lefthook](https://github.com/evilmartians/lefthook) is automatically installed and set up during this setup.
+Each time before you commit, [Biome](https://biomejs.dev/) will automatically run to lint and format the code.
+
+:::
+
+### Step 3 - Run the development server
+
+```bash
+npm run dev
+```
+
+## Website Features & Structure
+
+Generally, the website is structured into these four main features:
+
+### Homepage
+
+This page serves as the main landing page, and is what is loaded in when someone goes to the website.
+Ideally this would contain the necessary information as designed on the wireframe to get the attention of the user.
+
+### Events and Workshops
+
+Although [CatLife](https://ucmerced.presence.io/) does exist, this component itself would allow for much more
+detailed information, along with a way to keep track of different events in a convenient and centralized manner.
+These are pulled from the backend, which would allow for dynamic content served to the user.
+
+### SIGs Overview
+
+Some people may get confused when first joining the club, so we need a page to display each SIG and what they do.
+There are some data that has to be fetched from the backend, but this mostly serves as an informational page.
+
+### Dashboard
+
+We all know that clubs have to make a QR code that goes to a Google Forms link just to get you to sign in to the meeting. Now with this system, you literally don't have to. Just with a click of a button, you can sign up to attend a workshop or any important meetings. Also with the added features of reminders via Outlook events, etc.

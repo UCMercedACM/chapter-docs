@@ -1,0 +1,142 @@
+---
+sidebar_position: 1
+sidebar_label: Introduction
+description: Covers the basics and introduction of Kanae
+---
+
+
+# Introduction
+
+The backend uses to be split between five microservices 4 years ago, all written in different programming languages.
+2 years ago, it was migrated to [Firebase](https://firebase.google.com/). After the issues that plagued last year's development
+and the ACM Google account being 2FA-locked, it was decided to just make the backend from the ground up. Thus, this is what
+Kanae is - an monolithic server application designed to centralize the features of the old microservice, and to build it on
+a platform that was easily extensible, and taught frequently.
+
+Under the hood, Kanae is built on [FastAPI](https://fastapi.tiangolo.com/), which makes it much faster to develop. Internally as well,
+[PostgreSQL](https://www.postgresql.org/) is used for data storage, and [Redis](https://redis.io) is used as a global cache for
+ratelimits, and sometimes caching content.
+
+## Prerequisites
+
+There are some tools that you would need to have installed before you continue. They are listed below:
+
+- [Git](https://git-scm.com/)
+- [Python 3.9+](https://www.python.org/)
+- [Docker](https://www.docker.com/)
+- [Task](https://taskfile.dev/)
+- [Atlas](https://atlasgo.io/)
+
+:::important
+
+It's also important to read the [contributing](../contributing) guidelines, as they are recommendations on how you should contribute.
+
+:::
+
+## Setup
+
+Kanae only supports Python 3.9 or higher
+
+:::note
+
+You need to ensure that PostgreSQL and Redis are up before setting up Kanae. Please see the [Database](#database) section for further instruction.
+:::
+
+### Step 1 - Clone the repo
+
+In order to work on the project at all, we need to clone the repo down.
+
+```bash
+git clone https://github.com/UCMercedACM/kanae
+```
+
+### Step 2 - Create a virtualenv
+
+Creating an virtualenv allows our dependencies to not mix with global dependencies.
+For more information, please see [this](https://stackoverflow.com/a/41972262) Stackoverflow post.
+
+```bash
+python3 -m venv ./venv
+```
+
+### Step 3 - Activate the virtualenv
+
+Next, we are going to activate the virtualenv so we can install our dependencies into it.
+
+```bash
+# Linux/MacOS
+$ source venv/bin/activate
+
+# Windows
+$ venv/Scripts/activate.bat
+```
+
+### Step 4 - Install dependencies
+
+We are just going to use good old `pip` to install.
+[uv](https://github.com/astral-sh/uv) also is supported but please see the instructions on their documentation.
+
+```bash
+pip install -r requirements-dev.txt \
+&& lefthook install
+```
+
+### Step 5 - Copying configuration templates
+
+The server is configured by using a YAML configuration, which a template of it is included in the repo.
+We need to copy it over and modify the values as needed.
+
+```bash
+cp config.dist.yml server/config.yml
+```
+
+### Step 6 - Run the SQL migrations
+
+Kanae uses [Atlas](https://atlasgo.io/) to manage schema migrations. Specifically, [Declarative Migrations](https://atlasgo.io/getting-started#declarative-migrations)
+are used instead. This type of migration is very similar to how Git works. To simplify things, use the task command below instead. Continue to finish the prompts.
+
+```bash
+task schema-apply
+```
+
+### Step 7 - Running the development server
+
+Unlike what FastAPI tells you, Kanae by default includes a launcher of its own. We need to run it with no Uvicorn workers
+so development goes easier. The follow command executes this.
+
+```bash
+uvicorn launcher:app --app-dir=server --reload-exclude=venv --reload
+```
+
+Alternatively, ``task start`` can be used as a shortcut if you have Task installed.
+
+Once done, navigate to `127.0.0.1:8000` and verify that it works.
+
+## Database
+
+The database used are PostgreSQL and Redis. By default, a Docker Compose file is included for spinning up these for development.
+Setup instructions are as follows:
+
+### Step 1 - Copy `.env` template
+
+Copy `docker/example.env` to `.env` within the `docker` folder. Modify as appropriate.
+
+```bash
+cp docker/example.env docker/.env
+```
+
+### Step 2 - Run the servers
+
+All you need to do is to run the following command.
+
+```bash
+docker compose -f docker/docker-compose.dev.yml up -d
+```
+
+## Details
+
+### Typing Hinting
+
+Kanae actively uses [type hinting](https://docs.python.org/3/library/typing.html) in order to verify for types before runtime.
+[Pyright](https://github.com/microsoft/pyright) is used to enforce this standard. Checks happen before you commit, and on Github actions.
+This also can be activated in VSCode, and Pyright is available as a LSP on Neovim.

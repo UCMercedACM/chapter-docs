@@ -81,9 +81,15 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          sidebarId: "introSidebar",
           position: "left",
-          label: "Tutorial",
+          label: "Introduction"
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "projectSidebar",
+          position: "left",
+          label: "Projects"
         },
         {
           href: "https://github.com/UCMercedACM",

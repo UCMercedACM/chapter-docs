@@ -1,0 +1,13 @@
+{
+  "position": 3,
+  "label": "Kanae",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Kanae Overview"
+  },
+  "customProps": {
+    "description": "Overview of Kanae"
+  }
+}
