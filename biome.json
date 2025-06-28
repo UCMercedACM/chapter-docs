@@ -9,7 +9,7 @@
       "!**/.idea",
       "!**/public/",
       "!**/dist",
-      "!**/package-lock.json"
+      "!**/bun.lock"
     ]
   },
   "formatter": {
