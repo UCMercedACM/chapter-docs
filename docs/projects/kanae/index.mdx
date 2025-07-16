@@ -14,8 +14,7 @@ Kanae is - an monolithic server application designed to centralize the features 
 a platform that was easily extensible, and taught frequently.
 
 Under the hood, Kanae is built on [FastAPI](https://fastapi.tiangolo.com/), which makes it much faster to develop. Internally as well,
-[PostgreSQL](https://www.postgresql.org/) is used for data storage, and [Redis](https://redis.io) is used as a global cache for
-ratelimits, and sometimes caching content.
+[PostgreSQL](https://www.postgresql.org/) is used for data storage, and [Valkey](https://valkey.io/) is used as a global cache for the rate limiter, and sometimes caching content.
 
 ## Prerequisites
 
