@@ -139,3 +139,7 @@ docker compose -f docker/docker-compose.dev.yml up -d
 Kanae actively uses [type hinting](https://docs.python.org/3/library/typing.html) in order to verify for types before runtime.
 [Pyright](https://github.com/microsoft/pyright) is used to enforce this standard. Checks happen before you commit, and on Github actions.
 This also can be activated in VSCode, and Pyright is available as a LSP on Neovim.
+
+### Prometheus
+
+Kanae also comes bundled with an Prometheus exporter for metrics collections. By default, it is not enabled, you can enable it with the `kanae.prometheus.enabled` key. By default, no efforts are made for whether the endpoint is exposed publicly, as this is the responsibility of the web server (i.e, NGINX and co.), not the application. The endpoint is exposed under the `/metrics` path of the application.
