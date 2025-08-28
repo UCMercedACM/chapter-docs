@@ -20,8 +20,7 @@ const CardList: CardItem[] = [
   {
     icon: <Icon icon="lucide:info" width="28" height="28" />,
     title: "Documentation Introduction",
-    description:
-      "Covers the basics of this documentation, including the structure of this documentation",
+    description: "Covers the basics of this documentation",
     link: "/docs/introduction",
   },
   {
