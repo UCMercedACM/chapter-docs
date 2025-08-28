@@ -34,11 +34,11 @@ It's also important to read the [contributing](https://github.com/UCMercedACM/ka
 
 ## Setup
 
-Kanae only supports Python 3.9 or higher
+Kanae only supports Python 3.10 or higher
 
 :::note
 
-You need to ensure that PostgreSQL and Redis are up before setting up Kanae. Please see the [Database](#database) section for further instruction.
+You need to ensure that PostgreSQL and Valkey are up before setting up Kanae. Please see the [Database](#database) section for further instruction.
 :::
 
 ### Step 1 - Clone the repo
@@ -92,7 +92,7 @@ cp config.dist.yml server/config.yml
 ### Step 6 - Run the SQL migrations
 
 Kanae uses [Atlas](https://atlasgo.io/) to manage schema migrations. Specifically, [Declarative Migrations](https://atlasgo.io/getting-started#declarative-migrations)
-are used instead. This type of migration is very similar to how Git works. To simplify things, use the task command below instead. Continue to finish the prompts.
+are used instead. This type of migration is very similar to how Git works. To simplify things, use the task command below instead. Continue the prompts to finish.
 
 ```bash
 task schema-apply
@@ -113,7 +113,7 @@ Once done, navigate to `127.0.0.1:8000` and verify that it works.
 
 ## Database
 
-The database used are PostgreSQL and Redis. By default, a Docker Compose file is included for spinning up these for development.
+The database used are PostgreSQL and Valkey. By default, a Docker Compose file is included for spinning up these for development.
 Setup instructions are as follows:
 
 ### Step 1 - Copy `.env` template
