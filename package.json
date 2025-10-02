@@ -28,12 +28,12 @@
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.2",
-    "@docusaurus/module-type-aliases": "3.8.1",
-    "@docusaurus/tsconfig": "3.8.1",
-    "@docusaurus/types": "3.8.1",
-    "lefthook": "^1.12.3",
-    "typescript": "~5.9.2"
+    "@biomejs/biome": "2.2.5",
+    "@docusaurus/module-type-aliases": "3.9.1",
+    "@docusaurus/tsconfig": "3.9.1",
+    "@docusaurus/types": "3.9.1",
+    "lefthook": "^1.13.6",
+    "typescript": "~5.9.3"
   },
   "browserslist": {
     "production": [
