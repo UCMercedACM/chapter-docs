@@ -1,0 +1,63 @@
+[tools]
+node = "lts"
+pnpm = "10.33.0"
+
+[settings]
+experimental = true
+pin = true
+
+
+[tasks."docs:dev"]
+alias = ["docs:up", "docs:start"]
+description = "Start docs development server. Save file(s) to see changes"
+env._.path = "./node_modules/.bin"
+dir = "{{ config_root }}/"
+run = "docusaurus start"
+
+[tasks."docs:build"]
+description = "Build the docs site"
+env._.path = "./node_modules/.bin"
+dir = "{{ config_root }}/"
+run = "docusaurus build"
+
+[tasks."docs:swizzle"]
+description = "Swizzle a Docusaurus theme component"
+env._.path = "./node_modules/.bin"
+dir = "{{ config_root }}/"
+run = "docusaurus swizzle"
+
+[tasks."docs:deploy"]
+description = "Deploy the docs site"
+env._.path = "./node_modules/.bin"
+dir = "{{ config_root }}/"
+run = "docusaurus deploy"
+
+[tasks."docs:clear"]
+description = "Clear the Docusaurus generated assets, caches, and build artifacts"
+env._.path = "./node_modules/.bin"
+dir = "{{ config_root }}/"
+run = "docusaurus clear"
+
+[tasks."docs:serve"]
+description = "Serve the built docs site locally"
+env._.path = "./node_modules/.bin"
+dir = "{{ config_root }}/"
+run = "docusaurus serve"
+
+[tasks."docs:write-translations"]
+description = "Write translation files"
+env._.path = "./node_modules/.bin"
+dir = "{{ config_root }}/"
+run = "docusaurus write-translations"
+
+[tasks."docs:write-heading-ids"]
+description = "Write heading IDs to markdown files"
+env._.path = "./node_modules/.bin"
+dir = "{{ config_root }}/"
+run = "docusaurus write-heading-ids"
+
+[tasks."docs:typecheck"]
+description = "Run TypeScript type checking"
+env._.path = "./node_modules/.bin"
+dir = "{{ config_root }}/"
+run = "tsc"
