@@ -12,18 +12,44 @@ jobs:
   Check:
     runs-on: ubuntu-24.04
 
+    env:
+      ESLINT_CACHE_DIR: /tmp/.eslintcache
+
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Checkout Repository  
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
         with:
           node-version: lts/*
 
-      - name: Setup Biome CLI
-        uses: biomejs/setup-biome@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5
+        with:
+          version: latest
 
-      - name: Run Biome
-        run: biome ci --error-on-warnings --formatter-enabled=false --assist-enabled=false --enforce-assist=false .
+      - name: Restore ESLint cache
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
+        with:
+          path: ${{ env.ESLINT_CACHE_DIR }}
+          key: eslint-${{ runner.os }}-${{ hashFiles('eslint.config.js') }}
+          restore-keys: |
+            eslint-${{ runner.os }}-${{ hashFiles('eslint.config.js') }}
+            eslint-${{ runner.os }}
 
+      - name: Install dependencies
+        run: |
+          pnpm install --frozen-lockfile --ignore-scripts
+      
+      - name: Check codebase via Oxlint
+        run: |
+          pnpm exec oxlint --type-check --type-aware --deny-warnings src
+
+      - name: Check codebase via ESLint
+        run: |
+          pnpm exec eslint src --cache --cache-location $ESLINT_CACHE_DIR
+
+      - name: Check for formatting
+        run: |
+          pnpm exec oxfmt --check src

@@ -1,13 +1,16 @@
+import styles from "./styles.module.css";
+
 import Link from "@docusaurus/Link";
 import { Icon } from "@iconify/react";
 import Card from "@site/src/components/card";
 import CardBody from "@site/src/components/card/body";
 import CardHeader from "@site/src/components/card/header";
-
 import clsx from "clsx";
 import type { ReactNode } from "react";
 
-import styles from "./styles.module.css";
+const linkStyle = { textDecoration: "none", display: "flex", flex: 1, height: "100%" } as const;
+const cardHeaderStyle = { justifyContent: "left" } as const;
+const colInnerStyle = { display: "flex", flex: 1, height: "100%" } as const;
 
 interface CardItem {
   icon: ReactNode;
@@ -26,23 +29,18 @@ const CardList: CardItem[] = [
   {
     icon: <Icon icon="lucide:square-code" width="28" height="28" />,
     title: "Project Documentation",
-    description:
-      "Technical documentation for all projects, including past projects",
+    description: "Technical documentation for all projects, including past projects",
     link: "/docs/projects",
   },
 ];
 
-function Feature({ icon, title, description, link }: CardItem) {
+function Feature({ icon, title, description, link }: Readonly<CardItem>) {
   return (
-    <div className={clsx("col padding-vert--md")}>
-      <div className="text--center padding-horiz--md">
-        <Link to={link} style={{ textDecoration: "none" }} className="">
+    <div className={clsx("col col--6 padding-vert--md")}>
+      <div className="text--center padding-horiz--md" style={colInnerStyle}>
+        <Link to={link} style={linkStyle}>
           <Card shadow="tl">
-            <CardHeader
-              variant="secondary"
-              icon={icon}
-              style={{ justifyContent: "left" }}
-            >
+            <CardHeader variant="secondary" icon={icon} style={cardHeaderStyle}>
               {title}
             </CardHeader>
             <CardBody variant="secondary">{description}</CardBody>

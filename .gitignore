@@ -7,8 +7,10 @@
 # Generated files
 .docusaurus
 .cache-loader
+.eslintcache
 
 # Misc
+.vscode
 .DS_Store
 .env.local
 .env.development.local

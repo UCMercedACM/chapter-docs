@@ -1,3 +1,4 @@
+import Heading from "@theme/Heading";
 import clsx from "clsx";
 import type { CSSProperties, ReactNode } from "react";
 
@@ -29,7 +30,7 @@ export default function CardHeader({
   truncate = false,
   weight,
   icon,
-}: CardHeaderProps) {
+}: Readonly<CardHeaderProps>) {
   const text = textAlign ? `text--${textAlign}` : "";
   const textColor = variant ? `text--${variant}` : "";
   const textItalic = italic ? "text--italic" : "";
@@ -57,7 +58,7 @@ export default function CardHeader({
       <div className="row">
         <div className="col col--1">{icon}</div>
         <div className="col">
-          <h3>{children}</h3>
+          <Heading as={"h3"}>{children}</Heading>
         </div>
       </div>
     </div>

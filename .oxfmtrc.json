@@ -1,0 +1,26 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "ignorePatterns": [
+    "node_modules",
+    "dist"
+  ],
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "sortImports": {
+    "newlinesBetween": true,
+    "customGroups": [
+      {
+        "groupName": "alias-imports",
+        "elementNamePattern": ["@/**"]
+      }
+    ],
+    "groups": [
+      ["parent", "sibling", "index", "side_effect"],
+      "builtin",
+      ["external", "type-external"],
+      ["alias-imports", "internal", "type-internal"],
+      "unknown"
+    ]
+  }
+}
