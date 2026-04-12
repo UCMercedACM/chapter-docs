@@ -61,3 +61,22 @@ description = "Run TypeScript type checking"
 env._.path = "./node_modules/.bin"
 dir = "{{ config_root }}/"
 run = "tsc"
+
+[tasks."docs:lint"]
+description = "Lints the react codebase"
+env._.path = "./node_modules/.bin"
+dir = "{{ config_root }}"
+run = ["oxlint --type-aware --type-check --deny-warnings src", "eslint src --cache --cache-location .eslintcache"]
+
+[tasks."docs:format"]
+alias = ["docs:fmt"]
+description = "Formats the react codebase"
+env._.path = "./node_modules/.bin"
+dir = "{{ config_root }}"
+run = "oxfmt --write src"
+
+[tasks."docs:check"]
+description = "Lints and formats the react codebase"
+env._.path = "./node_modules/.bin"
+dir = "{{ config_root }}"
+run = [{"task" = "docs:lint"}, { "task" = "docs:format"}]

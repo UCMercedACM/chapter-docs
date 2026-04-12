@@ -27,7 +27,7 @@ export default function CardBody({
   breakWord = false,
   truncate = false,
   weight,
-}: CardBodyProps) {
+}: Readonly<CardBodyProps>) {
   const text = textAlign ? `text--${textAlign}` : "";
   const textColor = variant ? `text--${variant}` : "";
   const textItalic = italic ? "text--italic" : "";

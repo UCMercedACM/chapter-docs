@@ -27,7 +27,7 @@ export default function CardFooter({
   breakWord = false,
   truncate = false,
   weight,
-}: CardFooterProps) {
+}: Readonly<CardFooterProps>) {
   const text = textAlign ? `text--${textAlign}` : "";
   const textColor = variant ? `text--${variant}` : "";
   const textItalic = italic ? "text--italic" : "";

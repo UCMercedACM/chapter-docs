@@ -11,7 +11,9 @@ const config: Config = {
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true, // Improve compatibility with the upcoming Docusaurus v4,
+    // @ts-expect-error -- `experimental_faster` was renamed to `faster` but types are not yet updated
+    faster: true
   },
 
   // Set the production url of your site here
@@ -26,7 +28,13 @@ const config: Config = {
   projectName: "chapter-docs", // Usually your repo name.
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "throw",
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "throw",
+      onBrokenMarkdownImages: "throw"
+    }
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -62,6 +70,7 @@ const config: Config = {
         // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
         searchBarPosition: "left",
+        indexBlog: false,
       }),
     ],
   ],
@@ -101,7 +110,7 @@ const config: Config = {
     },
     footer: {
       style: "light",
-      copyright: `Copyright © ${new Date().getFullYear()}, ACM @ UC Merced`,
+      copyright: `Copyright © ${String(new Date().getFullYear())}, ACM @ UC Merced`,
     },
     prism: {
       theme: prismThemes.github,
