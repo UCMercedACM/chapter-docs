@@ -23,26 +23,28 @@
     "@mdx-js/react": "^3.1.1",
     "clsx": "^2.1.1",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^3.10.0",
+    "@docusaurus/eslint-plugin": "^3.10.1",
     "@docusaurus/module-type-aliases": "3.10.1",
     "@docusaurus/types": "3.10.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^10.2.0",
-    "eslint-plugin-oxlint": "^1.59.0",
-    "eslint-plugin-react-dom": "^5.0.0",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-x": "^5.0.0",
-    "globals": "^17.4.0",
-    "oxfmt": "^0.47.0",
-    "oxlint": "^1.59.0",
-    "oxlint-tsgolint": "^0.22.0",
+    "eslint": "^10.3.0",
+    "eslint-plugin-oxlint": "^1.63.0",
+    "eslint-plugin-react-dom": "^5.7.4",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-jsx": "^5.7.4",
+    "eslint-plugin-react-naming-convention": "^5.7.4",
+    "eslint-plugin-react-x": "^5.7.4",
+    "globals": "^17.6.0",
+    "oxfmt": "^0.48.0",
+    "oxlint": "^1.63.0",
+    "oxlint-tsgolint": "^0.22.1",
     "typescript": "^6.0.2",
-    "typescript-eslint": "^8.58.1"
+    "typescript-eslint": "^8.59.2"
   },
   "browserslist": {
     "production": [
@@ -57,6 +59,6 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=24.0"
   }
 }
