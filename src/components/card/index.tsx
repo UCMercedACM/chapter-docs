@@ -64,6 +64,7 @@ export default function Card({ className, style, children, shadow }: Readonly<Ca
   return (
     <div
       role="button"
+      tabIndex={0}
       className={clsx("card", className, cardShadow)}
       style={mergedStyle}
       onMouseEnter={handleMouseEnter}
