@@ -18,7 +18,7 @@
     "@docusaurus/core": "3.10.2",
     "@docusaurus/faster": "3.10.2",
     "@docusaurus/preset-classic": "3.10.2",
-    "@easyops-cn/docusaurus-search-local": "^0.55.1",
+    "@easyops-cn/docusaurus-search-local": "^0.55.2",
     "@iconify/react": "^6.0.2",
     "@mdx-js/react": "^3.1.1",
     "clsx": "^2.1.1",
@@ -35,18 +35,18 @@
     "eslint": "^10.7.0",
     "eslint-plugin-oxlint": "^1.73.0",
     "eslint-plugin-perfectionist": "^5.10.0",
-    "eslint-plugin-react-dom": "^5.14.6",
+    "eslint-plugin-react-dom": "^5.14.8",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-jsx": "^5.14.6",
-    "eslint-plugin-react-naming-convention": "^5.14.6",
-    "eslint-plugin-react-x": "^5.14.6",
+    "eslint-plugin-react-jsx": "^5.14.8",
+    "eslint-plugin-react-naming-convention": "^5.14.8",
+    "eslint-plugin-react-x": "^5.14.8",
     "eslint-plugin-sonarjs": "^4.1.0",
     "globals": "^17.7.0",
-    "oxfmt": "^0.58.0",
+    "oxfmt": "^0.59.0",
     "oxlint": "^1.73.0",
     "oxlint-tsgolint": "^0.24.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.63.0"
+    "typescript-eslint": "^8.64.0"
   },
   "browserslist": {
     "production": [
