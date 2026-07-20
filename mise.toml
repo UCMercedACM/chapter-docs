@@ -66,7 +66,7 @@ run = "tsc"
 description = "Lints the react codebase"
 env._.path = "./node_modules/.bin"
 dir = "{{ config_root }}"
-run = ["oxlint --type-aware --type-check --deny-warnings src", "eslint src --cache --cache-location .eslintcache"]
+run = ["tsc --noEmit", "oxlint --type-aware --type-check --deny-warnings src", "eslint src --cache --cache-location .eslintcache"]
 
 [tasks."docs:format"]
 alias = ["docs:fmt"]

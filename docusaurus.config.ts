@@ -12,7 +12,6 @@ const config: Config = {
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4,
-    // @ts-expect-error -- `experimental_faster` was renamed to `faster` but types are not yet updated
     faster: true
   },
 
