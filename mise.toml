@@ -1,6 +1,6 @@
 [tools]
-node = "26.8.1"
-pnpm = "12.3.4"
+node = "26.8.2"
+pnpm = "12.4.1"
 
 [settings]
 experimental = true
