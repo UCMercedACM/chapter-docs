@@ -3,6 +3,12 @@
 # our lockfiles, and with proper protections as well. So, this is just annoying
 trustLockfile: true
 
+# By default, pnpm does not have the Global Virtual Store enabled (https://pnpm.io/global-virtual-store)
+# It would store it per-project under node_modules/.pnpm, and for me, this effectively means that pnpm has to
+# constantly install per-project. Using the Global Virtual Store (GVS) significantly improves install performances.
+enableGlobalVirtualStore: true
+addMissingPeerTypes: true
+
 allowBuilds:
   '@swc/core': false
   core-js: false
