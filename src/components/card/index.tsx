@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { type CSSProperties, type ReactNode, useCallback, useMemo, useState } from "react";
 
 interface CardProps {

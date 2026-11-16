@@ -27,7 +27,7 @@
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^3.10.2",
+    "@docusaurus/eslint-plugin": "4.0.0-canary-7110",
     "@docusaurus/module-type-aliases": "3.10.2",
     "@docusaurus/types": "3.10.2",
     "@types/react": "^19.3.0",
@@ -37,7 +37,6 @@
     "eslint-plugin-oxlint": "^1.89.0",
     "eslint-plugin-perfectionist": "^5.13.0",
     "eslint-plugin-react-dom": "^5.28.8",
-    "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-jsx": "^5.28.8",
     "eslint-plugin-react-naming-convention": "^5.28.8",
     "eslint-plugin-react-x": "^5.28.8",
