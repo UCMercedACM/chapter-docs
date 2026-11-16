@@ -11,6 +11,10 @@
     "moduleResolution": "bundler",
     "module": "esnext",
     "noEmit": true,
+    "strict": true,
+    "erasableSyntaxOnly": true,
+    "noUncheckedIndexedAccess": true,
+    "noUncheckedSideEffectImports": true,
     "paths": {
       "@site/*": ["./*"]
     },
@@ -18,4 +22,3 @@
   },
   "exclude": [".docusaurus", "build"]
 }
-

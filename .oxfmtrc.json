@@ -1,9 +1,6 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "ignorePatterns": [
-    "node_modules",
-    "dist"
-  ],
+  "ignorePatterns": ["node_modules", "dist"],
   "printWidth": 100,
   "tabWidth": 2,
   "useTabs": false,
@@ -16,7 +13,8 @@
       }
     ],
     "groups": [
-      ["parent", "sibling", "index", "side_effect"],
+      "side_effect",
+      ["parent", "sibling", "index"],
       "builtin",
       ["external", "type-external"],
       ["alias-imports", "internal", "type-internal"],

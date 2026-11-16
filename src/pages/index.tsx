@@ -4,7 +4,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import CardFeatures from "@site/src/components/features";
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import type { ReactNode } from "react";
 
 function HomepageHeader() {

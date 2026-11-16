@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 import Card from "@site/src/components/card";
 import CardBody from "@site/src/components/card/body";
 import CardHeader from "@site/src/components/card/header";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import type { ReactNode } from "react";
 
 const linkStyle = { textDecoration: "none", display: "flex", flex: 1, height: "100%" } as const;
