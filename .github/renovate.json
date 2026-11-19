@@ -5,7 +5,9 @@
     "helpers:pinGitHubActionDigests",
     "abandonments:recommended"
   ],
-  "dependencyDashboard": false,
+  "dependencyDashboard": {
+    "enabled": false
+  },
   "separateMajorMinor": false,
   "lockFileMaintenance": {
     "enabled": true,
@@ -24,7 +26,7 @@
       "automerge": true
     },
     {
-      
+
       "matchManagers": [
         "github-actions"
       ],
